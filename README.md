@@ -9,6 +9,10 @@ Calendar API to fetch upcoming events.
 Meet App will use serverless functions (AWS lambda) for the authorization server
 instead of using a traditional server. Serverless funktions will be used for fetching upcoming events from the Google Calendar API.
 
+**Architectural diagram**
+
+![IMG_0064](https://github.com/michaelleoniuk/meet/assets/147387018/19887948-37d2-4448-87a4-bfdd9707bf48)
+
 **Technical Requirements:**
 - The app must be a React application.
 - The app must be built using the TDD technique.
