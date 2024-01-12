@@ -5,10 +5,10 @@ test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
 
 Technical Requirements:
-● The app must be a React application.
-● The app must be built using the TDD technique.
-● The app must use the Google Calendar API and OAuth2 authentication flow.
-● The app must use serverless functions (AWS lambda is preferred) for the authorization server
+- The app must be a React application.
+- The app must be built using the TDD technique.
+- The app must use the Google Calendar API and OAuth2 authentication flow.
+- The app must use serverless functions (AWS lambda is preferred) for the authorization server
 instead of using a traditional server.
 ● The app’s code must be hosted in a Git repository on GitHub.
 ● The app must work on the latest versions of Chrome, Firefox, Safari, Edge, and Opera, as well
