@@ -1,8 +1,13 @@
 **Objective**
 
-To build a serverless, progressive web application (PWA) with React using a
+To build **Meet App**, a serverless, progressive web application (PWA) with React using a
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
+
+**How serverless functions will be used in Meet App**
+
+Meet App will use serverless functions (AWS lambda) for the authorization server
+instead of using a traditional server. Serverless funktions will be used for fetching upcoming events from the Google Calendar API.
 
 **Technical Requirements:**
 - The app must be a React application.
@@ -13,7 +18,6 @@ instead of using a traditional server.
 - The app’s code must be hosted in a Git repository on GitHub.
 - The app must work on the latest versions of Chrome, Firefox, Safari, Edge, and Opera, as well
 as on IE11.
-Page 2
 - The app must display well on all screen sizes (including mobile and tablet) widths of 1920px
 and 320px.
 - The app must pass Lighthouse’s PWA checklist.
