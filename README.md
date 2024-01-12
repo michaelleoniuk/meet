@@ -30,8 +30,11 @@ user.
 **Feature 1: Filter Events By City**
 
 **User Story**
+
 As a user,
+
 I should be able to filter events by city
+
 So that I can see a list of events taking place in that city.
 
 **Scenario 1**: When user hasn’t searched for a city, show upcoming events from all cities.
@@ -52,8 +55,11 @@ Then their city should be changed to that city (i.e., “Berlin, Germany”) AND
 **Feature 2: Show/Hide Event Details**
 
 **User Story**
+
 As a user,
+
 I should be able to show and hide event details
+
 So that I can have an access to more information about specific event.
 
 **Scenario 1**: An event element is collapsed by default.
@@ -74,8 +80,11 @@ Then (future) user can collapse an event by clicking on "hide details" button.
 **Feature 3: Specify Number of Events**
 
 **User Story**
+
 As a user,
+
 I should be able to specify number of events that are shown to me,
+
 So that I can have control over how search results are presented to me .
 
 **Scenario 1**: When user hasn’t specified a number, 32 events are shown by default.
@@ -91,8 +100,11 @@ Then (future) chosen number of event will be shown
 **Feature 4: Use the App When Offline**
 
 **User Story**
+
 As a user,
+
 I should be able to to use the App when it is offline
+
 So that I would not be limmited when I want to use it but have no internet connection .
 
 **Scenario 1**: Show cached data when there’s no internet connection.
@@ -108,8 +120,11 @@ Then (future) error message would be shown
 **Feature 5: Add an App Shortcut to the Home Screen**
 
 **User Story**
+
 As a user,
+
 I should be able to add an App shortcut to the Home Screen
+
 So that I can have easy access to it whenever I want to use it .
 
 **Scenario 1**: User can install the meet app as a shortcut on their device home screen.
@@ -120,8 +135,11 @@ Then (future) user can add it as Shortcut to the Home Screen.
 **Feature 6: Display Charts Visualizing Event Details**
 
 **User Story**
+
 As a user,
+
 I should be able to see Charts that will give me visual perspective about all available events
+
 So that I can choose the right one while having the wider perspective of available choices .
 
 **Scenario 1**: Show a chart with the number of upcoming events in each city.
