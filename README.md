@@ -7,7 +7,7 @@ Calendar API to fetch upcoming events.
 **How serverless functions will be used in Meet App**
 
 Meet App will use serverless functions (AWS lambda) for the authorization server
-instead of using a traditional server. Serverless funktions will be used for fetching upcoming events from the Google Calendar API.
+instead of using a traditional server. Serverless functions will be used for fetching upcoming events from the Google Calendar API.
 
 **Architectural diagram**
 
