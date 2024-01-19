@@ -7,9 +7,9 @@ export const extractLocations = (events) => {
 };
 
 export const getEvents = async () => {
-    if (window.location.href.startsWith("http://localhost")) {
-      return mockData[0].items;
-    }
+  if (window.location.href.startsWith("http://localhost") || process.env.NODE_ENV === 'test') {
+    return mockData;
+  }
 
     const token = await getAccessToken();
   
