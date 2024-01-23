@@ -1,49 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const CitySearch = ({allLocations, setCurrentCity}) => {
-    const [showSuggestion, setShowSuggestion] = useState(false);
-    const [query, setQuery] = useState('');
-    const [suggestions, setSuggaestions] = useState([]);
-
-    const handleInputChange = (event) => {
+const CitySearch = ({allLocations, setCurrentCity})=> {
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const [query, setQuery] = useState("");
+    const [suggestions, setSuggestions] = useState([]);
+    const handleInputChanged = (event) => {
         const value = event.target.value;
         const filteredLocations = allLocations ? allLocations.filter((location) => {
-            return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+          return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         }) : [];
+    
         setQuery(value);
-        setSuggaestions(filteredLocations);
+        setSuggestions(filteredLocations);
+      };
+      const handleItemClicked = (event) => {
+        const value = event.target.textContent;
+        setQuery(value);
+        setShowSuggestions(false);
+        setCurrentCity(value);
+      };
+      useEffect(()=>{
+        setSuggestions(allLocations);
+      }, [`${allLocations}`])
 
-    }
-    const handleClick = (event) => {
-      const value = event.target.textContent;
-      setQuery(value);
-      setShowSuggestion(false);
-      setCurrentCity(value);
-    } 
-
-    useEffect(() => {
-      setSuggaestions(allLocations);
-    }, [`${allLocations}`]);
     return(
         <div id="city-search">
-          <input
-             type="text"
-             className="city"
-             placeholder="Search for a city"
-             value={query}
-             onFocus={() => setShowSuggestion(true)}
-             onChange={handleInputChange}
-         />  
-         {showSuggestion ? <ul className='suggestion'>
-            {suggestions.map((suggestion) => {
-                return <li onClick={handleClick} key={suggestion}>{suggestion}</li>
-            })}
-            <li key='See all the cities'> 
-              <b>See all cities</b>
-            </li>
-         </ul> : null}
+            <input type="text" className="city" placeholder="Search for a city" 
+            value={query}
+            onFocus={()=> setShowSuggestions(true)}
+            onChange={handleInputChanged}/>
+            {showSuggestions? <ul className="suggestions">
+                {suggestions.map((suggestion)=>{
+                    return <li key={suggestion} onClick={handleItemClicked}>{suggestion}</li>
+                })}
+                <li key='See all cities' onClick={handleItemClicked}>
+                    <b>See all Cities</b>
+                </li>
+            </ul> : null}
+            
         </div>
     )
 }
-
 export default CitySearch;
