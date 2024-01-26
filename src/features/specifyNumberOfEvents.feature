@@ -3,6 +3,7 @@ Feature: Specify number of events
         Given user was presented with number of available events
         When the user doesn't change the number of shown events
         Then 32 event will be presented to the user by defoult
+        
     Scenario: User can change the number of events displayed.
         Given user was presented with number of available events
         When the user changes the number of shown event
