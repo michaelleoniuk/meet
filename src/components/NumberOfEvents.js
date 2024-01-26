@@ -9,7 +9,10 @@ const NumberOfEvents =({setCurrentNOE})=>{
     }
     return(
         <div id="number-of-events">
-            <input type="text" className="textboxNumber" 
+            <input
+            data-testid="numberOfEventsInput"
+            type="text"
+            className="textboxNumber"
             placeholder="Enter a number"
             value={query}
             onChange={handleInputChanged}
