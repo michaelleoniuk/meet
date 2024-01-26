@@ -1,13 +1,13 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import App from '../App';
-import { render, waitFor, within } from '@testing-library/react';
+import { screen, render, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 
 defineFeature(feature, (test) => {
 
-  test("When user did not specified a number, 32 events are shown by default", ({
+  test("When a user hasn\'t specified a number, 32 events are shown by default", ({
     given,
     when,
     then,
@@ -18,7 +18,7 @@ defineFeature(feature, (test) => {
       AppComponent = render(<App />);
     });
 
-    when('the user does not change the number of shown events', async () => {
+    when('the user doesn\'t change the number of shown events', async () => {
       const AppDOM = AppComponent.container.firstChild;
       await waitFor(() => {
         eventList = within(AppDOM).queryAllByRole('listitem');
@@ -26,12 +26,12 @@ defineFeature(feature, (test) => {
       });
     });
 
-    then('32 event will be presented to the user by defoult', () => {
+    then('32 event will be presented to the user by default', () => {
       expect(eventList.length).toEqual(32);
     });
   });
 
-  test('User can change the number of events displayed', ({
+  test('User can change the number of events displayed.', ({
     given,
     when,
     then,
@@ -48,9 +48,9 @@ defineFeature(feature, (test) => {
 
     when('the user changes the number of shown event',
       async () => {
-        const button = AppComponent.queryByTestId('numberOfEventsInput');
+        const input = screen.queryByTestId('numberOfEventsInput');
 
-        await userEvent.type(button, '{backspace}{backspace}10');
+        await userEvent.type(input, '{backspace}{backspace}10');
       }
     );
 
