@@ -7,7 +7,7 @@ const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
 
 defineFeature(feature, (test) => {
 
-  test("When user hasn’t specified a number, 32 events are shown by default", ({
+  test("When user did not specified a number, 32 events are shown by default", ({
     given,
     when,
     then,
@@ -18,7 +18,7 @@ defineFeature(feature, (test) => {
       AppComponent = render(<App />);
     });
 
-    when('the user doesnt change the number of shown events', async () => {
+    when('the user does not change the number of shown events', async () => {
       const AppDOM = AppComponent.container.firstChild;
       await waitFor(() => {
         eventList = within(AppDOM).queryAllByRole('listitem');
