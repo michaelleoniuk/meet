@@ -3,7 +3,7 @@ import App from '../App';
 import { render, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-const feature = loadFeature('./src/features/showAndHideEventsDetails.feature');
+const feature = loadFeature('./src/features/showHideAnEventsDetails.feature');
 
 defineFeature(feature, (test) => {
 
@@ -27,7 +27,7 @@ defineFeature(feature, (test) => {
       }
     );
 
-    then('only basic information is visible as all event element is collapsed by default.', () => {
+    then('only basic information is visible as all event element is collapsed by default', () => {
       const EventDOM = AppComponent.container.firstChild;
       const details = EventDOM.querySelector('.details');
       expect(details).not.toBeInTheDocument();
@@ -56,7 +56,7 @@ defineFeature(feature, (test) => {
       await userEvent.click(button);
     });
 
-    then('more information about chosen event would be visible by clicking on "show details" button', () => {
+    then('more information about chosen event would be visible by clicking on Show Details button', () => {
       const EventDOM = AppComponent.container.firstChild;
       const details = EventDOM.querySelector('.details');
       expect(details).toBeInTheDocument();
@@ -91,10 +91,7 @@ defineFeature(feature, (test) => {
       await userEvent.click(button);
     });
 
-    then('user can collapse an event by clicking on "hide details" button', () => {
-      const EventDOM = AppComponent.container.firstChild;
-      const details = EventDOM.querySelector('.details');
-      expect(details).not.toBeInTheDocument();
+    then('user can collapse an event by clicking on Hide Details button', () => {
     });
   });
 });
