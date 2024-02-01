@@ -5,6 +5,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { getEvents, extractLocations } from './api';
 import { InfoAlert } from './components/Alert';
+import { ErrorAlert } from './components/Alert';
 
 const App = ()=> {
   const [events, setEvents] = useState([]);
