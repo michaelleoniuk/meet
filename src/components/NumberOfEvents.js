@@ -1,23 +1,31 @@
-import { useState } from "react";
+import React from "react";
 
-const NumberOfEvents =({setCurrentNOE})=>{
-    const [query, setQuery] = useState("32");
+const NumberOfEvents =({setCurrentNOE, setErrorAlert})=>{
     const handleInputChanged =(event)=>{
         const value = event.target.value;
-        setQuery(value);
-        setCurrentNOE(value);
+        console.log("Number is:", value);
+    setCurrentNOE(value);
+        let errorText;
+        if (isNaN(value) || value <= 0) {
+          errorText = "Minimum 1 is required";
+          setErrorAlert(errorText);
+        } else {
+          setCurrentNOE(value);
+          errorText = "";
+          setErrorAlert(errorText);
+        }
     }
-    return(
+    return (
         <div id="number-of-events">
-            <input
-            data-testid="numberOfEventsInput"
+          <input
+            data-testid="event-number-imput"
             type="text"
-            className="textboxNumber"
-            placeholder="Enter a number"
-            value={query}
+            className="event-number"
+            defaultValue="32"
             onChange={handleInputChanged}
-            />
+          />
         </div>
-    )
-}
+      );
+    };
+
 export default NumberOfEvents;
