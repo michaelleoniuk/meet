@@ -18,9 +18,9 @@ const NumberOfEvents =({setCurrentNOE, setErrorAlert})=>{
     return (
         <div id="number-of-events">
           <input
-            data-testid="event-number-imput"
+            data-testid="numberOfEventsInput"
             type="text"
-            className="event-number"
+            className="textboxNumber"
             defaultValue="32"
             onChange={handleInputChanged}
           />
