@@ -3,7 +3,7 @@ import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([]);
-  const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS", "Angular"];
+  const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
 
   useEffect(() => {
     setData(getData());
